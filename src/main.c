@@ -26,7 +26,6 @@ int     main(void)
     char    **env;
 
     env = init();
-    print_env(env);    
     minishell(env);
     return (0);
 }

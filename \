@@ -50,7 +50,7 @@ void    minishell(char **env)
         else if (strcmp(buffer, "exit") == 0)
             ft_exit(env, buffer);
         else if (strncmp(buffer, "echo ", 5) == 0 || strcmp(buffer, "echo") == 0)
-            ft_echo(env, buffer);
+            ft_echo(buffer, env);
         free(buffer);
 
     }

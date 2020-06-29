@@ -4,6 +4,7 @@
 #ifndef _MINISHELL_
 #define _MINISHELL_
 
+#include "libft.h"
 #include <stdbool.h>
 #include "../alylibc/inc/lib.h"
 #include <stdlib.h>
@@ -20,6 +21,7 @@ void    print_env(char **env);
 // minishell.c
 
 void    minishell(char **env);
+char    *read_line(void);
 
 // unsetenv.c
 
@@ -34,6 +36,18 @@ char    **ft_setenv(char **env, char *to_add);
 // cd.c
 
 char    **run_cd(char buffer[], char **env);
+
+// exit.c
+
+void    ft_exit(char **env, char *str);
+
+// echo.c
+
+void    ft_echo(char **env, char *buffer);
+
+// utils.c
+
+void    putstr(char *str);
 
 
 #endif

@@ -33,6 +33,7 @@ char    **ft_unsetenv(char **env, char *to_remove)
         {
             checker = true;
             counter++;
+            free2d(key_value);
             continue;
         }
         free2d(key_value);

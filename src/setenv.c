@@ -24,10 +24,13 @@ char    **ft_setenv(char **env, char *to_add)
             checker = true;
             free(env[counter]);
             env[counter] = strdup(to_add);
+            free2d(key_value);
             break;
         }
+        free2d(key_value);
         counter++;
     }
+    free2d(values);
     if (checker == false)
         env = arraypush(env, to_add);
     return (env);
@@ -37,11 +40,12 @@ char    **run_setenv(char buffer[], char **env)
 {
     char **args;
 
-    args = split(buffer, ' ');
+    args = ft_strsplit(buffer, ' ');
     if (arraylen(args) == 2 && strchr(args[1], '='))
         env = ft_setenv(env, args[1]);
     else
         printf("You're shit (and nobody loves you)\n");
+    free2d(args);
     return (env);
 }
 

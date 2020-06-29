@@ -4,7 +4,7 @@
 
 minishell = minishell
 
-src = main.c env.c minishell.c unsetenv.c setenv.c cd.c
+src = main.c env.c minishell.c unsetenv.c setenv.c exit.c echo.c utils.c
 
 obj	= $(src:.c=.o)
 
@@ -20,7 +20,7 @@ flags = -Wall -Wextra
 all:
 	make -C alylibc
 	gcc -c $(flags)  $(srcs)
-	gcc -o $(minishell) $(obj) alylibc/lib.a
+	gcc -o $(minishell) $(obj) alylibc/lib.a libft.a
 	mv $(obj) $(obj_dir)
 
 clean:
