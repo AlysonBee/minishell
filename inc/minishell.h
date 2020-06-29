@@ -49,5 +49,8 @@ void    ft_echo(char **env, char *buffer);
 
 void    putstr(char *str);
 
+// system.c
+
+void        ft_system(char **env, char *buffer);
 
 #endif
