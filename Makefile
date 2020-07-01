@@ -4,7 +4,7 @@
 
 minishell = minishell
 
-src = main.c env.c minishell.c unsetenv.c setenv.c exit.c echo.c utils.c system.c
+src = main.c env.c minishell.c unsetenv.c setenv.c exit.c echo.c utils.c system.c cd.c
 
 obj	= $(src:.c=.o)
 

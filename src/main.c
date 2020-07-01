@@ -4,6 +4,13 @@
 
 #include "../alylibc/inc/lib.h"
 #include "../inc/minishell.h"
+#include <signal.h>
+
+void    interrupt(int value)
+{
+    exit(1);
+}
+
 
 char    **init(void)
 {
@@ -11,6 +18,7 @@ char    **init(void)
     char    **env;
     int    counter;
 
+    signal(SIGINT, interrupt);
     env = NULL;
     counter = 0;
     while (environ[counter])

@@ -51,9 +51,12 @@ void    minishell(char **env)
             ft_exit(env, buffer);
         else if (strncmp(buffer, "echo ", 5) == 0 || strcmp(buffer, "echo") == 0)
             ft_echo(env, buffer);
+        else if (strncmp(buffer, "cd ", 3) == 0 || strcmp(buffer, "cd") == 0)
+            env = ft_cd(env, buffer);
         else
             ft_system(env, buffer);
         free(buffer);
+        //system("leaks minishell");
 
     }
 }

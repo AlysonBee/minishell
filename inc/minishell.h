@@ -35,7 +35,7 @@ char    **ft_setenv(char **env, char *to_add);
 
 // cd.c
 
-char    **run_cd(char buffer[], char **env);
+char    **ft_cd(char **env, char *buffer);
 
 // exit.c
 
@@ -47,7 +47,11 @@ void    ft_echo(char **env, char *buffer);
 
 // utils.c
 
-void    putstr(char *str);
+void        putstr(char *str);
+bool        check_for_env(char **env, char *to_find);
+char        *get_env_value(char **env, char *to_get);
+bool        change_directory(char *path, char *message);
+char        **move_to_oldpwd(char **env);
 
 // system.c
 
